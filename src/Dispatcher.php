@@ -5,9 +5,9 @@ namespace Sirius\Bus;
 use Closure;
 use RuntimeException;
 use Sirius\Pipeline\Pipeline;
-use Illuminate\Contracts\Queue\Queue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Contracts\Container\Container;
+use Sirius\Queue\Contracts\Queue;
+use Sirius\Queue\Contracts\ShouldQueue;
+use Sirius\Container\Contracts\Container;
 use Sirius\Bus\Contracts\QueueingDispatcher;
 
 class Dispatcher implements QueueingDispatcher

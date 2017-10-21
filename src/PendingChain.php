@@ -34,7 +34,7 @@ class PendingChain
     /**
      * Dispatch the job with the given arguments.
      *
-     * @return \Sirius\Bus\Traits\PendingDispatch
+     * @return \Sirius\Bus\PendingDispatch
      */
     public function dispatch()
     {
