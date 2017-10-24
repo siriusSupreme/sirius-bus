@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Foundation\Bus;
+namespace Sirius\Bus;
 
 class PendingChain
 {
@@ -23,7 +23,7 @@ class PendingChain
      *
      * @param  string  $class
      * @param  array  $chain
-     * @return void
+     *
      */
     public function __construct($class, $chain)
     {
@@ -34,7 +34,7 @@ class PendingChain
     /**
      * Dispatch the job with the given arguments.
      *
-     * @return \Illuminate\Foundation\Bus\PendingDispatch
+     * @return \Sirius\Bus\PendingDispatch
      */
     public function dispatch()
     {

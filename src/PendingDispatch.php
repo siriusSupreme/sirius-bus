@@ -1,8 +1,9 @@
 <?php
 
-namespace Illuminate\Foundation\Bus;
+namespace Sirius\Bus;
 
 use Sirius\Bus\Contracts\Dispatcher;
+use Sirius\Container\Container;
 
 class PendingDispatch
 {
@@ -17,7 +18,7 @@ class PendingDispatch
      * Create a new pending job dispatch.
      *
      * @param  mixed  $job
-     * @return void
+     *
      */
     public function __construct($job)
     {
@@ -83,6 +84,6 @@ class PendingDispatch
      */
     public function __destruct()
     {
-        app(Dispatcher::class)->dispatch($this->job);
+      Container::getInstance()->make(Dispatcher::class)->dispatch($this->job);
     }
 }

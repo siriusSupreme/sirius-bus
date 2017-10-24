@@ -1,13 +1,13 @@
 <?php
 
-namespace Illuminate\Bus;
+namespace Sirius\Bus;
 
 use Closure;
 use RuntimeException;
-use Illuminate\Pipeline\Pipeline;
-use Illuminate\Contracts\Queue\Queue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Contracts\Container\Container;
+use Sirius\Pipeline\Pipeline;
+use Sirius\Queue\Contracts\Queue;
+use Sirius\Queue\Contracts\ShouldQueue;
+use Sirius\Container\Contracts\Container;
 use Sirius\Bus\Contracts\QueueingDispatcher;
 
 class Dispatcher implements QueueingDispatcher
@@ -15,14 +15,14 @@ class Dispatcher implements QueueingDispatcher
     /**
      * The container implementation.
      *
-     * @var \Illuminate\Contracts\Container\Container
+     * @var \Sirius\Container\Contracts\Container
      */
     protected $container;
 
     /**
      * The pipeline instance for the bus.
      *
-     * @var \Illuminate\Pipeline\Pipeline
+     * @var \Sirius\Pipeline\Pipeline
      */
     protected $pipeline;
 
@@ -50,9 +50,9 @@ class Dispatcher implements QueueingDispatcher
     /**
      * Create a new command dispatcher instance.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \Sirius\Container\Contracts\Container  $container
      * @param  \Closure|null  $queueResolver
-     * @return void
+     *
      */
     public function __construct(Container $container, Closure $queueResolver = null)
     {
@@ -163,8 +163,9 @@ class Dispatcher implements QueueingDispatcher
     /**
      * Push the command onto the given queue instance.
      *
-     * @param  \Illuminate\Contracts\Queue\Queue  $queue
+     * @param  \Sirius\Queue\Contracts\Queue  $queue
      * @param  mixed  $command
+     *
      * @return mixed
      */
     protected function pushCommandToQueue($queue, $command)

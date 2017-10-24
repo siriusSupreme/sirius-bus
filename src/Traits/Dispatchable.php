@@ -1,13 +1,16 @@
 <?php
 
-namespace Illuminate\Foundation\Bus;
+namespace Sirius\Bus\Traits;
+
+use Sirius\Bus\PendingChain;
+use Sirius\Bus\PendingDispatch;
 
 trait Dispatchable
 {
     /**
      * Dispatch the job with the given arguments.
      *
-     * @return \Illuminate\Foundation\Bus\PendingDispatch
+     * @return \Sirius\Bus\PendingDispatch
      */
     public static function dispatch()
     {
@@ -18,7 +21,7 @@ trait Dispatchable
      * Set the jobs that should run if this job is successful.
      *
      * @param  array  $chain
-     * @return \Illuminate\Foundation\Bus\PendingChain
+     * @return \Sirius\Bus\PendingChain
      */
     public static function withChain($chain)
     {

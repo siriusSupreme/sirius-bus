@@ -1,8 +1,9 @@
 <?php
 
-namespace Illuminate\Foundation\Bus;
+namespace Sirius\Bus\Traits;
 
 use Sirius\Bus\Contracts\Dispatcher;
+use Sirius\Container\Container;
 
 trait DispatchesJobs
 {
@@ -14,7 +15,7 @@ trait DispatchesJobs
      */
     protected function dispatch($job)
     {
-        return app(Dispatcher::class)->dispatch($job);
+        return Container::getInstance()->make(Dispatcher::class)->dispatch($job);
     }
 
     /**
@@ -25,6 +26,6 @@ trait DispatchesJobs
      */
     public function dispatchNow($job)
     {
-        return app(Dispatcher::class)->dispatchNow($job);
+        return Container::getInstance()->make(Dispatcher::class)->dispatchNow($job);
     }
 }
