@@ -1,6 +1,6 @@
 <?php
 
-namespace Sirius\Bus;
+namespace Illuminate\Foundation\Bus;
 
 use Sirius\Bus\Contracts\Dispatcher;
 

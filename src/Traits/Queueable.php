@@ -1,10 +1,6 @@
 <?php
 
-namespace Sirius\Traits\Bus;
-
-use Sirius\Bus\PendingDispatch;
-use function Sirius\Support\collect;
-use function Sirius\Support\tap;
+namespace Illuminate\Bus;
 
 trait Queueable
 {
@@ -98,7 +94,7 @@ trait Queueable
     public function dispatchNextJobInChain()
     {
         if (! empty($this->chained)) {
-            new PendingDispatch(tap(unserialize(array_shift($this->chained)), function ($next) {
+            dispatch(tap(unserialize(array_shift($this->chained)), function ($next) {
                 $next->chained = $this->chained;
             }));
         }
