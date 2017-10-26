@@ -5,9 +5,9 @@ namespace Sirius\Bus;
 use Closure;
 use RuntimeException;
 use Sirius\Pipeline\Pipeline;
-use Sirius\Queue\Contracts\Queue;
+use Sirius\Queue\Queues\Queue;
 use Sirius\Queue\Contracts\ShouldQueue;
-use Sirius\Container\Contracts\Container;
+use Sirius\Container\Container;
 use Sirius\Bus\Contracts\QueueingDispatcher;
 
 class Dispatcher implements QueueingDispatcher
@@ -15,7 +15,7 @@ class Dispatcher implements QueueingDispatcher
     /**
      * The container implementation.
      *
-     * @var \Sirius\Container\Contracts\Container
+     * @var \Sirius\Container\Container
      */
     protected $container;
 
@@ -50,7 +50,7 @@ class Dispatcher implements QueueingDispatcher
     /**
      * Create a new command dispatcher instance.
      *
-     * @param  \Sirius\Container\Contracts\Container  $container
+     * @param  \Sirius\Container\Container  $container
      * @param  \Closure|null  $queueResolver
      *
      */

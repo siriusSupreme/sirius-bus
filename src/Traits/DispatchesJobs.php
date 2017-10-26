@@ -2,7 +2,7 @@
 
 namespace Sirius\Bus\Traits;
 
-use Sirius\Bus\Contracts\Dispatcher;
+use Sirius\Bus\Dispatcher;
 use Sirius\Container\Container;
 
 trait DispatchesJobs
